@@ -3,6 +3,7 @@ import string
 import time
 
 
+
 def load_file(file_path: str) -> list:
         random_words = []
         f = open(file_path, "r")
@@ -12,7 +13,7 @@ def load_file(file_path: str) -> list:
         return random_words
         
 def mask_word(word:str) -> str:
-        masked_word=''
+        masked_word = ''
         for character in word:
             if(character != " "):
                 masked_word = masked_word + "*"
@@ -20,7 +21,7 @@ def mask_word(word:str) -> str:
                 masked_word = masked_word + " "
         return masked_word  
 
-def select_letter(letters:str) -> list:
+def select_letter(letters:list) -> list:
         index = -1
         while(index == -1):
             l = input("Choose Letter: ")
@@ -50,12 +51,9 @@ def reduce_health(health:int, found:int):
             health -= 1
         return health
 
-def print_letters(letters:str) -> str:
-        print("Available Letters: ")
-        s = "|"
-        for l in letters:
-            s = s + l + "|"
-        print(s)
+def print_letters(letters: list) -> None:
+    print("Available Letters:")
+    print("|" + "|".join(letters) + "|")
         
 def print_info(masked_word:str, health:int) -> str:
         print("Health: " + "❤" * health)
@@ -87,9 +85,11 @@ health = 10
 
 game_over = 0
 
-print ("========Welcome to the Hangman game!============\n")
+name = input("Enter you name: ")
+
+print ("=============Welcome to the Hangman game!============\n")
 time.sleep(1.5)
-print ("=================Good luck!=====================\n")
+print ("=================" + name + " ,Good luck!=====================\n")
 
 while(not game_over):
   
@@ -106,7 +106,7 @@ while(not game_over):
     health = reduce_health(health, found)
     
     game_over = check_game_over(masked_word, health)
-    print("-------------------")
+    print("---------------------------------------")
 
 if(health > 0):
     
