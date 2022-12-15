@@ -4,7 +4,7 @@
 
 <h2>Project Screenshot:</h2>
 
-<img src="https://raw.githubusercontent.com/newvaldas/hangman_terminal_game/master/hangman_terminal.png" alt="project-screenshot" width="640" height="230/">
+![Alt text](image/hangman_terminal.png "Optional title")
 
 <h2>🛠️ Installation Steps:</h2>
 
