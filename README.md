@@ -4,7 +4,7 @@
 
 <h2>Project Screenshot:</h2>
 
-![Alt text](image/hangman_terminal.png "Optional title")
+![Alt text](image/hangman_terminal.png )
 
 <h2>🛠️ Installation Steps:</h2>
 
