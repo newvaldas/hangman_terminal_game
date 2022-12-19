@@ -1,8 +1,8 @@
 import numpy as np
-import string
 import time
 import logging
 from game_functions import *
+import string
 
 
 logging.basicConfig(filename="hangman.log", encoding="UTF-8",
@@ -17,7 +17,7 @@ letters = list(string.ascii_lowercase)
 
 index = np.random.randint(len(random_words))
 
-word = random_words[index].lower() #<- make and upper
+word = random_words[index].lower() 
 
 masked_word = mask_word(word)
 
@@ -32,14 +32,14 @@ time.sleep(1.5)
 print (f"================={name} ,Good luck!=====================\n")
 
 logging.info("Starting game")
-while(not game_over):
+while not game_over:
   
     print_info(masked_word, health)
    
     print_letters(letters)
    
     logging.info(f"Player {name} selecting letter")
-    (i,l) = select_letter(letters)
+    i, l = select_letter(letters)
     logging.info(f"Player {name} selected letter: %s", l)
     
     letters.pop(i)
@@ -51,14 +51,12 @@ while(not game_over):
     
     game_over = check_game_over(masked_word, health)
     print("---------------------------------------")
-    
-    logging.info("Ending game")
 
 if(health > 0):
-    
+    logging.info("Ending game")
     print("You Won!")
-else:
     
+else:
     print("You Lost!")
 print("The word was: ",(word.upper())) 
 

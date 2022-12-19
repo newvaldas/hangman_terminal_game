@@ -1,4 +1,4 @@
-import string
+
 
 def load_file(file_path: str) -> list:
         random_words = []
@@ -50,9 +50,9 @@ def print_letters(letters: list) -> None:
     print("Available Letters:")
     print("|" + "|".join(letters) + "|")
         
-def print_info(masked_word:str, health:int) -> str:
-        print("Health: " + "❤" * health)
-        print("Word: " + masked_word)
+def print_info(masked_word: str, health: int) -> None:
+    print("Health: " + "❤" * health)
+    print("Word: " + masked_word)
         
 def check_game_over(masked_word:str, health:int) -> int:
         game_over = 0
